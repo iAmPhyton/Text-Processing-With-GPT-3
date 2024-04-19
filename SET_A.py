@@ -45,12 +45,21 @@ def create_prompt(user_query, best_matches):
         prompt += match + "\n"
     return prompt
 
+# openai API Key
+openai.api_key = 'YOUR_OPEN_AI_KEY'
+
 # Function to get answer from GPT-3
 def get_answer_from_gpt3(prompt):
-    # Send prompt to GPT-3 API and get response
-    # Replace the following line with your GPT-3 API call
-    # response = gpt3_api_call(prompt)
-    # For demonstration, we'll use a placeholder response
+    # Call the OpenAI API to get the response
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        max_tokens=100
+    )
+    return response.choices[0].text.strip()
+
+# Function to get answer from GPT-3
+def get_answer_from_gpt3(prompt):
     response = "This is a placeholder answer gotten from GPT-3."
     return response
 
