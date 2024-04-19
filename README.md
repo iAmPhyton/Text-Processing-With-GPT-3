@@ -11,18 +11,7 @@ Features:
 - Change the embedding model to OpenAI's 'text-embedding-ada-002'.
 - Suggestions for improvement and an alternative approach summary.
   
-Installation:
-To run this project locally, follow these steps:
-- Clone the repository to your local machine
-- git clone https://github.com/your_username/text-processing-gpt3.git
-Navigate to the project directory:
-- cd text-processing-gpt3
-Install the required Python packages:
-- pip install -r requirements.txt
-- Replace 'YOUR_API_KEY' in the add_data_to_database function with your Pinecone API key.
-- Replace 'your_docx_file.docx' in the user_query function with the path to your .docx file.
-Run the Python script:
-python script.py
+
 
 Usage:
 Modify the script.py file to customize the behavior of the application.
