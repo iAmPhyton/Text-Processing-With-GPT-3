@@ -3,6 +3,7 @@ import numpy as np
 from transformers import AutoTokenizer, AutoModel
 import torch
 import pinecone
+import openai 
 
 # Loading the text from the provided docx file and split into chunks
 def load_and_split_text(docx_file):
@@ -17,7 +18,7 @@ def load_and_split_text(docx_file):
 # Function to add data to the vector database
 def add_data_to_database(chunks):
     # Initialize Pinecone client
-    pinecone.init(api_key='d668683a-2cd6-43c7-879a-fd25efb875fe', environment='us-west1')
+    pinecone.init(api_key='YOUR_PINECONE_API_KEY', environment='us-west1')
     index = pinecone.Index(name='vector_database')
 
     # Load the embedding model
@@ -46,7 +47,7 @@ def create_prompt(user_query, best_matches):
     return prompt
 
 # openai API Key
-openai.api_key = 'YOUR_OPEN_AI_KEY'
+openai.api_key = 'YOUR_OPEN_AI_API_KEY'
 
 # Function to get answer from GPT-3
 def get_answer_from_gpt3(prompt):
