@@ -45,6 +45,11 @@ def generate_recommendations(answers):
 
     return fruits_allowed
 
+# Flask route to handle GET requests (e.g., to show a form for submitting answers)
+@app.route('/')
+def index():
+    return 'Welcome to the fruit recommendation system!'
+
 # Flask route to handle POST requests
 @app.route('/recommend-fruits', methods=['POST'])
 def recommend_fruits():
